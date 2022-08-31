@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb
+  h2:
+    console:
+      enabled: true
+  jpa:
+    show-sql: true
+    hibernate:
+      format_sql: true
+
+server:
+  port: 4455
+
+
+jwt:
+  secret: my-secret
