@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/jwt_security
+    username: gunda
+    password: admin@123
+    initialize: true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+      format-sql: true
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQLDialect
