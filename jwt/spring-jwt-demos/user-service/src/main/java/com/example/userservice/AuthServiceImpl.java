@@ -17,7 +17,9 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
+import java.util.Optional;
 
 @Service
 @Slf4j
@@ -36,10 +38,18 @@ public class AuthServiceImpl implements AuthService, UserDetailsService {
         //validate user
         userValidator.validUsername(user.getUsername());
 
-        //add default role
-        Role userRole = roleRepository.findById(2L)
-                .orElseThrow(() -> new UserServiceException("Role not found"));
-        user.getRoles().add(userRole);
+        //get the role
+        Optional<Role> selectedRole= roleRepository.findById(user.getRoles().get(0).getId());
+
+        if(selectedRole.isEmpty()) {
+            //add default role
+            Role defaultRole = roleRepository.findById(2L)
+                    .orElseThrow(() -> new UserServiceException("Role not found"));
+            //user.getRoles().add(defaultRole);
+            user.setRoles(Arrays.asList(defaultRole));
+        }else {
+            user.setRoles(Arrays.asList(selectedRole.get()));
+        }
 
         //encode the password
         user.setPassword(passwordEncoder.encode(user.getPassword()));

@@ -1,6 +1,5 @@
 package com.example.userservice.security.filter;
 
-import com.example.userservice.dto.Error;
 import com.example.userservice.security.token.JWTVerifier;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
@@ -12,7 +11,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.time.Instant;
 import java.util.Collections;
 import java.util.List;
 

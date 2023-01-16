@@ -10,7 +10,7 @@ spring:
       format_sql: true
 
 server:
-  port: 4455
+  port: 4456
 
 
 jwt:

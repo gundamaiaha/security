@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Actual Application</title>
+</head>
+<body>
+<!--<form action="/account/transfer" method="post">-->
+<!--    <input type="submit" value="Transfer Money">-->
+<!--</form>-->
+
+<form th:action="@{/account/transfer}" method="post">
+    <input type="submit" value="Transfer Money">
+</form>
+</body>
+</html>

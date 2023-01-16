@@ -39,7 +39,6 @@ public class AuthController {
      URI location = ServletUriComponentsBuilder.fromCurrentContextPath().path("/api/auth/login").build().toUri();
         authService.registerUser(user);
     return ResponseEntity.created(location).body("You are successfully registered!!!");
-
     }
 
     @PostMapping("/token/refresh")
