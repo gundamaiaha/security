@@ -1,0 +1,11 @@
+logging:
+  level:
+    root: DEBUG
+    org:
+      springframework: DEBUG
+
+spring:
+  security:
+    user:
+      name: admin
+      password: admin
